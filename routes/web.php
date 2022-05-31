@@ -18,6 +18,22 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/packages', function () {
+    return view('packages');
+});
+
+Route::get('/places', function () {
+    return view('places');
+});
+
 Auth::routes();
 
 // Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -29,3 +45,5 @@ Route::get('/dashboard/invoice/pdf/{payment}', [HomeController::class, 'invoice'
 Route::post('/updatepayment/{payment}', [HomeController::class, 'update'])->middleware('is_admin');
 
 Route::post('/storePembayaran', [HomeController::class, 'pembayaran']);
+
+
